@@ -1,0 +1,15 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Delete Book";
+}
+<form method="post">
+    <div class="window" style="background-color:#E6E6FA;padding:20px;">
+        <p3>Are you sure you want to delete this Book</p3>
+        <div class="buttons" style="padding-top:10px;">
+            <button type="submit" class="btn btn-warning">Okay</button>
+            <a asp-controller="Books" asp-action="Index" class="btn btn-secondary">
+                Back to Books
+            </a>
+        </div>
+    </div>
+</form>

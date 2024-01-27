@@ -1,0 +1,54 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Update Book";
+}
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-dark">Update Book</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="WroteOn"></label>
+            <input asp-for="WroteOn" class="form-control" />
+            <span asp-validation-for="WroteOn" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category"></label>
+            <select asp-for="Category" class="form-select" asp-items="Html.GetEnumSelectList<BooksCategory>()"></select>
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Type"></label>
+            <select asp-for="Type" class="form-select" asp-items="Html.GetEnumSelectList<BookType>()"></select>
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="AuthorId"></label>
+            <select asp-for="AuthorId" class="form-select" asp-items="@ViewBag.MyBag"></select>
+            <span asp-validation-for="AuthorId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Image</label>
+            <input type="file" asp-for="clientFile" class="form-control" />
+            <span asp-validation-for="clientFile" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-warning">Save</button>
+        <a asp-action="Index" asp-controller="Books" class="btn btn-secondary">
+            Back To Books
+        </a>
+    </div>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

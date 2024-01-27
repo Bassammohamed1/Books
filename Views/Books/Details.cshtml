@@ -1,0 +1,42 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = @Model.Name;
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-dark">@Model.Name</h2>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">
+                    Image
+                </th>
+                <th scope="col">
+                    Name
+                </th>
+                <th scope="col">
+                    Description
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-warning">
+                <td scope="row">
+                    <img src="@Model.imageSrc" alt="@Model.Name" style="width:170px; height:170px; max-width:100%" />
+                </td>
+                <td scope="row">
+                    @Model.Name
+                </td>
+                <td width="50%">
+                    @Model.Description
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
