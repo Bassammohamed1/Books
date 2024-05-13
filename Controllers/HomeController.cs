@@ -1,8 +1,6 @@
-﻿using Books.Models;
-using Books.Repository.Interfaces;
+﻿using Books.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Books.Controllers
 {
